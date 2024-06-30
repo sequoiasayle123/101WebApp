@@ -1,8 +1,8 @@
 import logo from './101doc.png';
 import './App.css';
-import TextEditor from './components/TextEditor';
 import SideBanner from './components/SideBanner';
 import MarkdownEditor from './components/MarkDownEditor';
+import { MarkdownProvider } from './components/Context';
 
 function App() {
   return (
@@ -10,15 +10,12 @@ function App() {
       <header className="App-header">
         <img src={logo}/>
       </header>
-      <body className='container'>
-        {/* <TextEditor></TextEditor> */}
-        <div className='main'>
-          <MarkdownEditor></MarkdownEditor>
-        </div>
+      <MarkdownProvider>
         <div className='sidebar'>
-          <SideBanner></SideBanner>
+          <SideBanner/>
         </div>
-      </body>
+        <MarkdownEditor/>
+      </MarkdownProvider>
     </div>
   );
 }
