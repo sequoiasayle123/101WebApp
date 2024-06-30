@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import UploadFile from "./UploadFile";
 import SyntaxCheck from "./SyntaxCheck";
+import ImportTemplates from "./ImportTemplates";
 
 function SideBanner(){
     const [selectedTab, setSelectedTab] = useState(0);
@@ -14,8 +15,8 @@ function SideBanner(){
             </div>
             <div className="tab-content">
                 {selectedTab === 0 && <div>
-                    <UploadFile></UploadFile>
-                    <p>Import template</p></div>}
+                    <UploadFile/>
+                    <ImportTemplates/></div>}
                 {selectedTab === 1 && <div>
                     <p>Tags and Images</p></div>}
                 {selectedTab === 2 && <div>

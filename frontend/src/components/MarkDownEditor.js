@@ -10,9 +10,12 @@ const MarkdownEditor = () => {
   };
 
   return (
-    <div>
-      <textarea value={markdown} onChange={handleMarkdownChange} />
-      <ReactMarkdown>{markdown}</ReactMarkdown>
+    <div className='container'>
+      <textarea className='editor' value={markdown} onChange={handleMarkdownChange} placeholder='Type here...'/>
+      <div className='preview'>
+        <ReactMarkdown>{markdown}</ReactMarkdown>
+      </div>
+
     </div>
   );
 };
