@@ -6,12 +6,15 @@ function SyntaxCheck(){
     const markdown = "Hiya, i havent figured this out yet"
   
     const handleFormatCheck = async () => {
-      const response = await axios.post('/api/check-format', { markdown });
+      //const response = await axios.post('/api/check-format', { markdown });
       // Handle the response to show formatting issues
+      console.log("Not Working")
     };
 
     return(
-        <button onClick={handleFormatCheck}>Check Formatting</button>   
+      <div>
+        <button className="dropdown-button" onClick={handleFormatCheck}>Check Formatting</button>  
+      </div>
     )
 }
 

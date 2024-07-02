@@ -6,25 +6,25 @@ function ImportTemplates(){
     const [isOpen, setIsOpen] = useState(false)
     const { setMarkdownText } = useContext(MarkdownContext)
     const formatOptions = [
-        {label:"Internal Knowledge", context: "./templates/InternalKnoledge.md"},
-        {label: "User Guides", context: "./templates/UserGuides.md"},
-        {label: "Spike Page", context: "./templates/SpikePage.md"},
-        {label:"Process/Instructions", context: "./templates/ProcessInstruction.md"},
-        {label: "Installation Guide", context: "./templates/InstallationGuide.md"},
-        {label: "Tech Overview", context: "./templates/TechOverview.md"},
-        {label: "Application Guides", context: "./templates/ApplicationGuides.md"},
-        {label: "Test Steps", context: "./templates/TestSteps.md"},
-        {label: "Release Notes", context: "./templates/ReleaseNotes.md"},
-        {label: "Contract Information", context: "./templates/ContractInformation.md"},
-        {label: "Blank Page", context: "./templates/blank.md"}]
+        {label:"Internal Knowledge", context: "InternalKnowledge.md"},
+        {label: "User Guides", context: "UserGuides.md"},
+        {label: "Spike Page", context: "SpikePage.md"},
+        {label:"Process/Instructions", context: "ProcessInstruction.md"},
+        {label: "Installation Guide", context: "InstallationGuide.md"},
+        {label: "Tech Overview", context: "TechOverview.md"},
+        {label: "Application Guides", context: "ApplicationGuides.md"},
+        {label: "Test Steps", context: "TestSteps.md"},
+        {label: "Release Notes", context: "ReleaseNotes.md"},
+        {label: "Contract Information", context: "ContractInformation.md"},
+        {label: "Blank Page", context: "blank.md"}]
 
     const toggleDropdown = () => {
         setIsOpen(!isOpen);
         console.log("Hello")
     };
 
-    const handleSelect = async (content) => {
-        const markdownTemplate = await fetchMarkdownFile(content)
+    const handleSelect = async (fileName) => {
+        const markdownTemplate = await fetchMarkdownFile(fileName)
         // fetch markdown file is getting localhost/
         setMarkdownText(markdownTemplate)
     }

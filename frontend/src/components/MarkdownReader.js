@@ -1,6 +1,6 @@
 export async function fetchMarkdownFile(fileName) {
     try {
-        const response = await fetch(`${fileName}`);
+        const response = await fetch(`${process.env.PUBLIC_URL}/templates/${fileName}`);
         if (!response.ok) {
             throw new Error(`Failed to fetch Markdown file ${fileName}`);
         }

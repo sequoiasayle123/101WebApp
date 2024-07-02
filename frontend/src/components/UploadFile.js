@@ -11,6 +11,7 @@ function UploadFile(){
     
     return(
         <div>
+            <button className="dropdown-button">Upload a Markdown File</button>
             <input type="file" onChange={handleFileUpload} />
         </div>
     )

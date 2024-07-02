@@ -2,6 +2,9 @@ import React, {useState} from "react";
 import UploadFile from "./UploadFile";
 import SyntaxCheck from "./SyntaxCheck";
 import ImportTemplates from "./ImportTemplates";
+import SelectTag from "./SelectTag";
+import ImageGenerate from "./ImageGenerate";
+import ReviewCheckList from "./ReviewCheckList";
 
 function SideBanner(){
     const [selectedTab, setSelectedTab] = useState(0);
@@ -16,12 +19,14 @@ function SideBanner(){
             <div className="tab-content">
                 {selectedTab === 0 && <div>
                     <UploadFile/>
+                    <br></br>
                     <ImportTemplates/></div>}
                 {selectedTab === 1 && <div>
-                    <p>Tags and Images</p></div>}
+                    <ImageGenerate/>
+                    <SelectTag/></div>}
                 {selectedTab === 2 && <div>
-                    <p>Check List</p>
-                    <SyntaxCheck></SyntaxCheck></div>}
+                    <SyntaxCheck/>
+                    <ReviewCheckList/></div>}
             </div>
         </div>
     )
