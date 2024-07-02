@@ -12,13 +12,14 @@ function App() {
 
   const fetchTemplate = async (template) => {
       try {
-          const response = await fetch(`/templates/${template}`);
+          const response = await fetch(`./templates/${template}`);
           console.log(template)
           if (!response.ok) {
               throw new Error('Network response was not ok');
           }
           const data = await response.text();
-          setContent(data);
+          //setContent(response);
+          console.log(data)
       } catch (error) {
           console.error('Fetch error:', error);
       }
@@ -34,7 +35,7 @@ function App() {
         <div className='sidebar'>
           <SideBanner templates={templates} onSelectTemplate={fetchTemplate}/>
         </div>
-        <MarkdownEditor content={content}/>
+        <MarkdownEditor file={content}/>
       </MarkdownProvider>
     </div>
   );

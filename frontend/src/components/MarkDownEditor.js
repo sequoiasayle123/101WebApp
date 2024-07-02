@@ -1,15 +1,22 @@
 // Example: frontend/src/components/MarkdownEditor.js
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import ReactMarkdown from 'react-markdown';
-import { MarkdownContext } from './Context';
 
 
-function MarkdownEditor() {
-  const { markdownText, setMarkdownText } = useContext(MarkdownContext);
+function MarkdownEditor(file) {
+  const [ markdownText, setMarkdownText ] = useState('');
 
   const handleMarkdownChange = (e) => {
     setMarkdownText(e.target.value);
   };
+
+  useEffect(() => {
+    fetch(file)
+    .then((res) => res.text())
+    .then((md) => {
+      setMarkdownText(md)
+    })
+  }, []);
 
   return (
     <div className='container'>
