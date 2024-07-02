@@ -1,9 +1,9 @@
 // Example: frontend/src/components/MarkdownEditor.js
-import React, { useContext, useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import ReactMarkdown from 'react-markdown';
 
 
-function MarkdownEditor(file) {
+function MarkdownEditor({ selectedTemplate }) {
   const [ markdownText, setMarkdownText ] = useState('');
 
   const handleMarkdownChange = (e) => {
@@ -11,12 +11,14 @@ function MarkdownEditor(file) {
   };
 
   useEffect(() => {
-    fetch(file)
-    .then((res) => res.text())
-    .then((md) => {
-      setMarkdownText(md)
-    })
-  }, []);
+    if (selectedTemplate) {
+      fetch(selectedTemplate)
+      .then((res) => res.text())
+      .then((md) => {
+        setMarkdownText(md)
+      })
+    }
+  }, [selectedTemplate]);
 
   return (
     <div className='container'>

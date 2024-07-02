@@ -6,7 +6,7 @@ import SelectTag from "./SelectTag";
 import ImageGenerate from "./ImageGenerate";
 import ReviewCheckList from "./ReviewCheckList";
 
-function SideBanner({ templates, onSelectTemplate }){
+function SideBanner({ templates, onTemplateSelect }){
     const [selectedTab, setSelectedTab] = useState(0);
 
     return(
@@ -20,7 +20,8 @@ function SideBanner({ templates, onSelectTemplate }){
                 {selectedTab === 0 && <div>
                     <UploadFile/>
                     <br></br>
-                    <ImportTemplates templates={templates} onSelectTemplate={onSelectTemplate}/></div>}
+                    <ImportTemplates templates={templates} onTemplateSelect={onTemplateSelect}/>
+                    </div>}
                 {selectedTab === 1 && <div>
                     <ImageGenerate/>
                     <SelectTag/></div>}

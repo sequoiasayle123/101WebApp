@@ -2,41 +2,38 @@ import logo from './101doc.png';
 import './App.css';
 import SideBanner from './components/SideBanner';
 import MarkdownEditor from './components/MarkDownEditor';
-import { MarkdownProvider } from './components/Context';
 import React, { useState } from 'react';
+import template1 from './templates/InternalKnowledge.md';
+import template2 from './templates/UserGuides.md'
 
 function App() {
 
-  const [content, setContent] = useState('');
-  const templates = ['InternalKnowledge.md', 'UserGuides.md']; // Add your template filenames here
-
-  const fetchTemplate = async (template) => {
-      try {
-          const response = await fetch(`./templates/${template}`);
-          console.log(template)
-          if (!response.ok) {
-              throw new Error('Network response was not ok');
-          }
-          const data = await response.text();
-          //setContent(response);
-          console.log(data)
-      } catch (error) {
-          console.error('Fetch error:', error);
-      }
+  const [ selectedTemplate, setSelectedTemplate ] = useState(null);
+  const templates = {
+    template1:template1,
+    template2:template2
   };
-
+    //     {label:"Internal Knowledge", context: "InternalKnowledge.md"},
+    //     {label: "User Guides", context: "UserGuides.md"},
+    //     {label: "Spike Page", context: "SpikePage.md"},
+    //     {label:"Process/Instructions", context: "ProcessInstruction.md"},
+    //     {label: "Installation Guide", context: "InstallationGuide.md"},
+    //     {label: "Tech Overview", context: "TechOverview.md"},
+    //     {label: "Application Guides", context: "ApplicationGuides.md"},
+    //     {label: "Test Steps", context: "TestSteps.md"},
+    //     {label: "Release Notes", context: "ReleaseNotes.md"},
+    //     {label: "Contract Information", context: "ContractInformation.md"},
+    //     {label: "Blank Page", context: "blank.md"}]
 
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo}/>
       </header>
-      <MarkdownProvider>
-        <div className='sidebar'>
-          <SideBanner templates={templates} onSelectTemplate={fetchTemplate}/>
-        </div>
-        <MarkdownEditor file={content}/>
-      </MarkdownProvider>
+      <div className='sidebar'>
+        <SideBanner templates={templates} onTemplateSelect={setSelectedTemplate}/>
+      </div>
+      <MarkdownEditor selectedTemplate={selectedTemplate}/>
     </div>
   );
 }

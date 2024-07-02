@@ -1,13 +1,13 @@
-import React, {useContext, useState} from "react";
+import React, {useState} from "react";
 
 
 function SelectTag(){
     const [isOpen, setIsOpen] = useState(false)
     const formatOptions = [
-        {label:"Developer", context: ""},
-        {label: "User", context: ""},
-        {label: "Release 1.0", context: ""},
-        {label: "Release 2.3", context: ""}]
+        {label:"Developer", content: ""},
+        {label: "User", content: ""},
+        {label: "Release 1.0", content: ""},
+        {label: "Release 2.3", content: ""}]
 
 
     const toggleDropdown = () => {
@@ -29,7 +29,7 @@ function SelectTag(){
             {isOpen && (
                 <ul className="dropdown-list">
                     {formatOptions.map((option, index) => (
-                        <button key={index} className="dropdown-item" onClick={() => handleSelect(option.context)}>
+                        <button key={index} className="dropdown-item" onClick={() => handleSelect(option.content)}>
                             {option.label}
                         </button>
                     ))}
