@@ -3,27 +3,35 @@ import './App.css';
 import SideBanner from './components/SideBanner';
 import MarkdownEditor from './components/MarkDownEditor';
 import React, { useState } from 'react';
+import template0 from './templates/blank.md';
 import template1 from './templates/InternalKnowledge.md';
 import template2 from './templates/UserGuides.md'
+import template3 from './templates/SpikePage.md';
+import template4 from './templates/ProcessInstructions.md';
+import template5 from './templates/InstallationGuide.md';
+import template6 from './templates/TechOverview.md';
+import template7 from './templates/ApplicationGuides.md';
+import template8 from './templates/TestSteps.md';
+import template9 from './templates/ReleaseNotes.md';
+import template10 from './templates/ContractInformation.md'
+
 
 function App() {
 
   const [ selectedTemplate, setSelectedTemplate ] = useState(null);
   const templates = {
-    template1:template1,
-    template2:template2
+    "Refresh":template0,
+    "Internal Knowledge":template1,
+    "User Guides":template2,
+    "Spike Pages":template3,
+    "Processes/Instructions":template4,
+    "Installation Guide":template5,
+    "Tech Overview":template6,
+    "Application Guide":template7,
+    "Test Steps":template8,
+    "Release Notes":template9,
+    "Contractual Information":template10
   };
-    //     {label:"Internal Knowledge", context: "InternalKnowledge.md"},
-    //     {label: "User Guides", context: "UserGuides.md"},
-    //     {label: "Spike Page", context: "SpikePage.md"},
-    //     {label:"Process/Instructions", context: "ProcessInstruction.md"},
-    //     {label: "Installation Guide", context: "InstallationGuide.md"},
-    //     {label: "Tech Overview", context: "TechOverview.md"},
-    //     {label: "Application Guides", context: "ApplicationGuides.md"},
-    //     {label: "Test Steps", context: "TestSteps.md"},
-    //     {label: "Release Notes", context: "ReleaseNotes.md"},
-    //     {label: "Contract Information", context: "ContractInformation.md"},
-    //     {label: "Blank Page", context: "blank.md"}]
 
   return (
     <div className="App">

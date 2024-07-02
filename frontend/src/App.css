@@ -125,3 +125,8 @@ html, body {
   color: white;
   font-size: small;
 }
+
+.template-button{
+  width: 100%;
+  height: 30px;
+}

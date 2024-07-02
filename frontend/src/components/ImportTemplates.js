@@ -15,7 +15,7 @@ function ImportTemplates({ templates, onTemplateSelect }){
             {isOpen && (
                 <div className="dropdown-list">
                     {Object.keys(templates).map((templateKey) => (
-                        <button key={templateKey} onClick={() => onTemplateSelect(templates[templateKey])}>
+                        <button className="template-button" key={templateKey} onClick={() => onTemplateSelect(templates[templateKey])}>
                             {templateKey}
                         </button>
                     ))}
