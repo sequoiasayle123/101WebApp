@@ -8,7 +8,7 @@ function SyntaxCheck(){
     const handleFormatCheck = async () => {
       //const response = await axios.post('/api/check-format', { markdown });
       // Handle the response to show formatting issues
-      console.log("Not Working")
+      alert("The functionality isn't available.");
     };
 
     return(

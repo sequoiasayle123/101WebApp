@@ -10,10 +10,14 @@ function UploadFile(){
         setMarkdown(text);
       };
     
+    function sayNo() {
+        alert("This functionality isn't available.");
+    }
+
     return(
         <div>
-            <button className="dropdown-button">Upload a Markdown File</button>
-            <input type="file" onChange={handleFileUpload} />
+            <button className="dropdown-button" onClick={sayNo}>Upload a Markdown File</button>
+            {/* <input type="file" onChange={handleFileUpload} /> */}
         </div>
     )
 }

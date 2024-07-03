@@ -11,7 +11,8 @@ function SelectTag(){
 
 
     const toggleDropdown = () => {
-        setIsOpen(!isOpen);
+        // setIsOpen(!isOpen);
+        alert("The functionality isn't available.");
     };
 
     const handleSelect = async (fileName) => {
