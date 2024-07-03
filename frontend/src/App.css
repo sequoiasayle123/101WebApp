@@ -119,6 +119,7 @@ html, body {
   padding: 20px;
   background-color: lightgray;
   overflow-y: auto;
+  text-align: left;
 }
 
 .checkbox{

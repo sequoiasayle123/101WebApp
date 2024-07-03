@@ -5,13 +5,19 @@
 
 ## Overview
 
-Outline the highlevel deatils of the release.
+Outline the highlevel details of the release.
 
-Release Name:
+Release Name:   
 Release Date:
 
 ## Contents
 1. Software Updates
+2. Noteable Changes
+3. Patch Updates
 
 
 ### Software Updates
+
+### Noteable Changes
+
+### Patch Updates

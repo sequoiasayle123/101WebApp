@@ -4,6 +4,7 @@ import SideBanner from './components/SideBanner';
 import MarkdownEditor from './components/MarkDownEditor';
 import React, { useState } from 'react';
 import template0 from './templates/blank.md';
+import syntaxTemplate from './templates/MarkdownSyntax.md';
 import template1 from './templates/InternalKnowledge.md';
 import template2 from './templates/UserGuides.md'
 import template3 from './templates/SpikePage.md';
@@ -21,6 +22,7 @@ function App() {
   const [ selectedTemplate, setSelectedTemplate ] = useState(null);
   const templates = {
     "Refresh":template0,
+    "Markdown Syntax":syntaxTemplate,
     "Internal Knowledge":template1,
     "User Guides":template2,
     "Spike Pages":template3,
