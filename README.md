@@ -13,4 +13,5 @@ To run this application locally, follow these steps:
    ``npm install``
 7. Run the application  \
     ``npm start``
-8. Open localhost:3000 in a browser
+8. Open localhost:3000 in a browser  \
+   ![image](https://github.com/sequoiasayle123/101WebApp/assets/49438901/2cf53fcc-4690-4812-a743-c3944fe97057)
