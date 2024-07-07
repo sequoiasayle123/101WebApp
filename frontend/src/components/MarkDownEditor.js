@@ -6,19 +6,20 @@ import ReactMarkdown from 'react-markdown';
 function MarkdownEditor({ selectedTemplate }) {
   const [ markdownText, setMarkdownText ] = useState('');
 
-  const handleMarkdownChange = (e) => {
-    setMarkdownText(e.target.value);
-  };
-
   useEffect(() => {
     if (selectedTemplate) {
       fetch(selectedTemplate)
       .then((res) => res.text())
       .then((md) => {
-        setMarkdownText(md)
+        setMarkdownText(md);
       })
+      console.log(selectedTemplate)
     }
   }, [selectedTemplate]);
+
+  const handleMarkdownChange = (e) => {
+    setMarkdownText(e.target.value);
+  };
 
   return (
     <div className='container'>

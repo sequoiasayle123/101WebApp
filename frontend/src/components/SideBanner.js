@@ -18,7 +18,7 @@ function SideBanner({ templates, onTemplateSelect }){
             </div>
             <div className="tab-content">
                 {selectedTab === 0 && <div>
-                    <UploadFile/>
+                    <UploadFile onTemplateSelect={onTemplateSelect}/>
                     <br></br>
                     <ImportTemplates templates={templates} onTemplateSelect={onTemplateSelect}/>
                     </div>}
